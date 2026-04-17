@@ -11,7 +11,7 @@ This repository contains my SQL projects.
 '''sql
        SELECT DISTINCT product_name
        FROM jan_sales;
-'''
+       '''
 **Display the first 10 sales records**
 '''sql
        SELECT product_name, sale_date, quantity
