@@ -7,11 +7,13 @@ This repository contains my SQL projects.
 - sales dataset queries
 
 ## SQL queries for Diffrent insights
+
 **Show all unique fruit names in the table.**
 '''sql
-       SELECT DISTINCT product_name
-       FROM jan_sales;
-       '''
+SELECT DISTINCT product_name
+FROM jan_sales;
+'''
+
 **Display the first 10 sales records**
 '''sql
        SELECT product_name, sale_date, quantity
@@ -19,66 +21,76 @@ FROM jan_sales
 ORDER BY sale_date ASC
 LIMIT 10;
 '''
+
 **Find all sales of Banana that happened before 15th January 2024.**
 '''sql
-       SELECT product_name, sale_date, quantity
+SELECT product_name, sale_date, quantity
 FROM jan_sales
 WHERE product_name='Banana' AND sale_date<'2024-01-15';
 '''
+
 **Show the top 3 largest transactions across all fruits.**
 '''sql
-       SELECT product_name, quantity
+SELECT product_name, quantity
 FROM jan_sales
 ORDER BY quantity DESC
 LIMIT 3;
 '''
+
 **List all sales where quantity is greater than 20.**
 '''sql
-       SELECT product_name, quantity
+SELECT product_name, quantity
 FROM jan_sales
 WHERE quantity>20;
 '''
+
 **Retrieve sales of Apple that occurred in January 2024.**
 '''sql
-       SELECT product_name, quantity, sale_date
+SELECT product_name, quantity, sale_date
 FROM jan_sales
 WHERE product_name='Apple' AND sale_date BETWEEN '2024-01-01' and '2024-01-30';
 '''
+
 **Show the latest sale record in the table.**
 '''sql
-       SELECT product_name, sale_date
+SELECT product_name, sale_date
 FROM jan_sales
 ORDER BY sale_date DESC
 LIMIT 5;
 '''
+
 **Display sales of Mango where quantity is between 5 and 15.**
 '''sql
-       SELECT product_name, quantity, sale_date
+SELECT product_name, quantity, sale_date
 FROM jan_sales
 WHERE product_name='Mango' AND quantity BETWEEN '5' and '15';
 '''
+
 **List all sales sorted first by product_name alphabetically, then by sale_date descending.**
 '''sql
-       SELECT product_name, sale_date
+SELECT product_name, sale_date
 FROM jan_sales
 ORDER BY product_name ASC, sale_date DESC;
 '''
+
 **Show the second‑latest sale record in the table.**
 '''sql
-       SELECT product_name, sale_date
+SELECT product_name, sale_date
 FROM jan_sales
 ORDER BY sale_date DESC
 LIMIT 1 OFFSET 1;
 '''
+
 **Write a query that shows the earliest sale record for each product.**
 '''sql
-       SELECT DISTINCT product_name, sale_date
+SELECT DISTINCT product_name, sale_date
 FROM jan_sales
 ORDER BY sale_date ASC;
 SELECT DISTINCT ON (product_name) product_name, sale_date, quantity
 FROM jan_sales
 ORDER BY product_name, sale_date ASC;
 '''
+
 ## FRUIT STORE PROJECT 1
 
 **Unique Products List**
